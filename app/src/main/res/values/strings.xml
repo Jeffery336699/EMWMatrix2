@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">EMWMatrix2</string>
 
+    <string name="group_desc">频道内容显示在这里,不会出现省略号</string>
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

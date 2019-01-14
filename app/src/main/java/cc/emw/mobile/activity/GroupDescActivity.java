@@ -1,4 +1,4 @@
-package cc.emw.mobile;
+package cc.emw.mobile.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import cc.emw.mobile.R;
 
 public class GroupDescActivity extends AppCompatActivity {
 

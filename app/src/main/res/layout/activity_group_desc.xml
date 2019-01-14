@@ -23,9 +23,11 @@
                     android:gravity="center"
                     android:text="频道详情"
                     />
+                <include layout="@layout/divide_line"/>
 
 
             </android.support.v7.widget.Toolbar>
+
 
 
     </LinearLayout>

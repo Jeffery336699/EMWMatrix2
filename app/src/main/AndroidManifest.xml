@@ -11,7 +11,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".GroupDescActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.BaseActivity"></activity>
+        <activity android:name=".activity.GroupDescActivity"></activity>
     </application>
 
 </manifest>
