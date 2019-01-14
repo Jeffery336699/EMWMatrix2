@@ -57,9 +57,11 @@ public class SlideRecyclerView extends RecyclerView {
         mScroller = new Scroller(context);
     }
     float startX = 0;
+
+
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        getParent().requestDisallowInterceptTouchEvent(true);
+
         return super.dispatchTouchEvent(ev);
     }
 
@@ -78,7 +80,6 @@ public class SlideRecyclerView extends RecyclerView {
                 mFirstY = y;
                 mPosition = pointToPosition(x, y);  // 获取触碰点所在的position
                 if (mPosition != INVALID_POSITION) {
-
 
                     mCacheView = mFlingView;
                     // 获取触碰点所在的view
@@ -114,10 +115,12 @@ public class SlideRecyclerView extends RecyclerView {
                         || Math.abs(x - mFirstX) >= mTouchSlop
                         && Math.abs(x - mFirstX) > Math.abs(y - mFirstY)) {
                     mIsSlide = true;
+                    getParent().requestDisallowInterceptTouchEvent(true);
                     return true;
                 }
                 break;
             case MotionEvent.ACTION_UP:
+                getParent().requestDisallowInterceptTouchEvent(false);
                 releaseVelocity();
                 break;
         }
