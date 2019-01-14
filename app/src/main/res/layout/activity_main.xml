@@ -17,6 +17,10 @@
             android:background="#ffffff"
             android:orientation="vertical">
 
+            <FrameLayout
+                android:id="@+id/fragment_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
         </LinearLayout>
         <!--侧滑界面-->
         <LinearLayout
@@ -43,8 +47,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="right"
             android:background="#8e6d6d"
-            android:orientation="horizontal"
-            >
+            android:orientation="horizontal">
 
 
         </LinearLayout>
