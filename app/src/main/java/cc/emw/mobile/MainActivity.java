@@ -10,6 +10,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -30,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
     private HomeFragment mHomeFragment;
     private CiclerTalkFragment mCiclerTalkFragment;
 
+    private HomeFragment homeFragment;
+    private CiclerTalkFragment ciclerTalkFragment;
+    private FragmentTransaction transaction;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +49,8 @@ public class MainActivity extends AppCompatActivity {
     private void initFragment() {
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.fragment_container, new HomeFragment());
+        homeFragment = new HomeFragment();
+        transaction.replace(R.id.fragment_container, homeFragment);
         transaction.commit();
     }
 
