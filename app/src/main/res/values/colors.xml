@@ -3,6 +3,42 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="white">#FFFFFF</color>
     <color name="red">#FF0000</color>
+    <color name="white">#FFffff</color>
+    <color name="cm_divider_bg">#1A000000</color>
+
+
+    <color name="gray">#DDDEE2</color>
+    <color name="gray_4">#e5e5e5</color>
+    <!-- 灰色 -->
+
+    <color name="lightgrey">#D3D3D3</color>
+    <!-- 亮灰色 -->
+
+    <color name="green">#008000</color>
+    <!-- 绿色 -->
+
+    <color name="blue">#2FA6FF</color>
+    <color name="blue_2">#5192fa</color>
+    <color name="blue_3">#4b8aeb</color>
+    <!-- 蓝色 -->
+
+    <color name="black">#000000</color>
+    <!-- 黑色 -->
+
+    <color name="azure">#F0FFFF</color>
+    <!-- 天蓝色 -->
+
+    <color name="transparent">#00000000</color>
+
+    <color name="icon_color1">#335b9d</color>
+    <color name="icon_color2">#5C74D8</color>
+    <color name="icon_color3">#4FA5E2</color>
+    <color name="icon_color4">#0074FF</color>
+    <color name="icon_color5">#169BFF</color>
+    <color name="icon_color6">#00C4E0</color>
+    <color name="icon_color7">#1ABC9C</color>
+    <color name="icon_color8">#5ECBB0</color>
+    <color name="icon_color9">#FF953B</color>
+    <color name="icon_color10">#DC6E6E</color>
 </resources>

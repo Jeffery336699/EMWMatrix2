@@ -80,9 +80,9 @@ public class CiclerTalkFragment extends Fragment {
 
         alphaIndicator.setViewPager(mViewPger);
 
-        alphaIndicator.getTabView(0).showNumber(6);
-        alphaIndicator.getTabView(1).showNumber(888);
-        alphaIndicator.getTabView(2).showNumber(88);
+        alphaIndicator.getTabView(0).showNumber(1);
+        alphaIndicator.getTabView(1).showNumber(1);
+        alphaIndicator.getTabView(2).showNumber(1);
         alphaIndicator.getTabView(3).showPoint();
     }
 
@@ -96,12 +96,12 @@ public class CiclerTalkFragment extends Fragment {
     private class MainAdapter extends FragmentPagerAdapter implements ViewPager.OnPageChangeListener {
 
         private List<Fragment> fragments = new ArrayList<>();
-        private String[] titles = {"微信", "通讯录", "发现", "我"};
+        private String[] titles = {"首页", "协同", "用户", "我"};
 
         public MainAdapter(FragmentManager fm) {
             super(fm);
             fragments.add(MessageFragmentNew.newInstance(new Bundle()));
-            fragments.add(TextFragment.newInstance(titles[1]));
+            fragments.add(new GroupFragmentNew());
             fragments.add(TextFragment.newInstance(titles[2]));
             fragments.add(TextFragment.newInstance(titles[3]));
         }
