@@ -2,8 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
       xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/search_btn"
-        android:icon="@drawable/action_bar_search_view_icon"
+        android:id="@+id/shoucang"
+        android:icon="@drawable/group_desc_shoucang"
         android:title=""
         app:showAsAction="always"/>
     <item

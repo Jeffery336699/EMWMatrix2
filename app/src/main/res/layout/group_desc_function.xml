@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qb_px_16"
+        android:scrollbars="none"
+       >
+
+        <RadioGroup
+            android:id="@+id/rg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_wenjian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/qb_px_20"
+                android:button="@null"
+                android:checked="true"
+                android:drawableTop="@drawable/group_file"
+                android:drawablePadding="@dimen/qb_px_8"
+                android:gravity="center"
+                android:text="文件"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/qb_px_27"
+                android:button="@null"
+                android:checked="true"
+                android:drawableTop="@drawable/group_img"
+                android:drawablePadding="@dimen/qb_px_8"
+                android:gravity="center"
+                android:text="图片"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/qb_px_27"
+                android:button="@null"
+                android:checked="true"
+                android:drawableTop="@drawable/group_chat"
+                android:drawablePadding="@dimen/qb_px_8"
+                android:gravity="center"
+                android:text="聊天内容"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/qb_px_27"
+                android:button="@null"
+                android:checked="true"
+                android:drawableTop="@drawable/group_ait"
+                android:drawablePadding="@dimen/qb_px_8"
+                android:gravity="center"
+                android:text="'@'我的"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/qb_px_27"
+                android:button="@null"
+                android:checked="true"
+                android:drawableTop="@drawable/group_ding"
+                android:drawablePadding="@dimen/qb_px_8"
+                android:gravity="center"
+                android:text="Pin消息"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/qb_px_27"
+                android:button="@null"
+                android:checked="true"
+                android:drawableTop="@drawable/group_collerctor"
+                android:drawablePadding="@dimen/qb_px_8"
+                android:gravity="center"
+                android:text="收藏消息"
+                android:textSize="12sp" />
+
+
+        </RadioGroup>
+
+    </HorizontalScrollView>
+
+    <include
+        android:layout_marginTop="@dimen/qb_px_16"
+        layout="@layout/divide_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_12" />
+
+</LinearLayout>

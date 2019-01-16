@@ -20,6 +20,11 @@ public class UiUtil {
     /**
      * 获取图片资源
      */
+
+    public static Context init(Context context){
+        Context mContext = context.getApplicationContext();
+        return mContext;
+    }
     public static int[] getIcons(Context context, int arraysId) {
         TypedArray category_icons = context.getResources().obtainTypedArray(arraysId);
         int len = category_icons.length();

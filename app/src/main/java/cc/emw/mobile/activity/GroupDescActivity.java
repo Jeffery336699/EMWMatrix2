@@ -1,24 +1,35 @@
 package cc.emw.mobile.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.support.annotation.NonNull;
+import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.PopupWindow;
+import android.widget.RelativeLayout;
+import android.widget.Toast;
+
+import com.hmy.popwindow.PopItemAction;
+import com.hmy.popwindow.PopWindow;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import cc.emw.mobile.R;
+import cc.emw.mobile.view.MyNestedScrollView;
 
-public class GroupDescActivity extends AppCompatActivity {
+public class GroupDescActivity extends BaseActivity {
 
 
-    @BindView(R.id.title)
-    TextView title;
-    @BindView(R.id.toolbar)
-    Toolbar toolbar;
+    @BindView(R.id.recycle_view)
+    RecyclerView recycleView;
+    @BindView(R.id.rl_channel_management)
+    RelativeLayout rlChannelManagement;
+    @BindView(R.id.parent)
+    MyNestedScrollView parent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,9 +40,38 @@ public class GroupDescActivity extends AppCompatActivity {
         initview();
     }
 
+
     private void initview() {
-        setSupportActionBar(toolbar);
-        toolbar.setNavigationIcon(R.drawable.delete_selector);
+        setSupportActionBar(toolBar);
+        toolBar.setNavigationIcon(R.drawable.delete_selector);
+    }
+
+    @NonNull
+    @OnClick({R.id.rl_channel_management})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.rl_channel_management://频道管理
+                showPopBottom();
+                break;
+        }
+    }
+
+    private void showPopBottom() {
+        PopWindow popWindow = new PopWindow.Builder(this)
+                .setStyle(PopWindow.PopWindowStyle.PopUp)
+                .addItemAction(new PopItemAction("转为私有频道"))
+                .addItemAction(new PopItemAction("封存频道", PopItemAction.PopItemStyle.Normal))
+                .addItemAction(new PopItemAction("离开频道", PopItemAction.PopItemStyle.Normal, new PopItemAction.OnClickListener() {
+                    @Override
+                    public void onClick() {
+                        Toast.makeText(getApplicationContext(), "选项3", Toast.LENGTH_SHORT).show();
+                    }
+                }))
+                .addItemAction(new PopItemAction("删除频道", PopItemAction.PopItemStyle.Warning))
+                .addItemAction(new PopItemAction("取消", PopItemAction.PopItemStyle.Cancel))
+                .create();
+        popWindow.show();
+
     }
 
     @Override
@@ -60,7 +100,11 @@ public class GroupDescActivity extends AppCompatActivity {
             case R.id.add_buddy:
 
                 break;
-            case R.id.search_btn:
+            case R.id.shoucang:
+                View inflate = View.inflate(getApplicationContext(), R.layout.channel_management, null);
+                PopWindow popWindow = new PopWindow.Builder(this)
+                        .setStyle(PopWindow.PopWindowStyle.PopDown).setView(inflate).create();
+                popWindow.show();
                 break;
             default:
                 break;

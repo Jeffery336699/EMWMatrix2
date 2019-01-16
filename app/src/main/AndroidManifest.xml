@@ -12,16 +12,18 @@
         android:theme="@style/AppTheme.NoActionBar"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".MainActivity">
-
-        </activity>
-        <activity android:name=".activity.BaseActivity"></activity>
-        <activity android:name=".activity.GroupDescActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity android:name=".activity.BaseActivity" />
+        <activity android:name=".activity.GroupDescActivity">
+
+        </activity>
+        <activity android:name=".chat.P2PChatActivity">
+
         </activity>
     </application>
 

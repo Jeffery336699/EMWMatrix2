@@ -1,5 +1,6 @@
 package cc.emw.mobile.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -11,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-
 import com.tengyukun.alphatabs.AlphaTabsIndicator;
 
 import java.util.ArrayList;
@@ -19,8 +19,11 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.Unbinder;
 import cc.emw.mobile.R;
+import cc.emw.mobile.activity.GroupDescActivity;
+import cc.emw.mobile.view.NoScrollViewPager;
 
 public class CiclerTalkFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
@@ -36,7 +39,8 @@ public class CiclerTalkFragment extends Fragment {
     @BindView(R.id.alphaIndicator)
     AlphaTabsIndicator alphaIndicator;
     @BindView(R.id.vp)
-    ViewPager mViewPger;
+    NoScrollViewPager mViewPger;
+
 
     private String mParam1;
     private String mParam2;
@@ -62,6 +66,7 @@ public class CiclerTalkFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
@@ -70,6 +75,7 @@ public class CiclerTalkFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_cicler_talk, container, false);
         bind = ButterKnife.bind(this, view);
         initIndicator();
+        mViewPger.setNoScroll(true);
         return view;
     }
 
@@ -136,5 +142,10 @@ public class CiclerTalkFragment extends Fragment {
         public void onPageScrollStateChanged(int state) {
 
         }
+    }
+
+    @OnClick(R.id.ivHead)
+    public void onClick(View view) {
+        startActivity(new Intent(getActivity(), GroupDescActivity.class));
     }
 }

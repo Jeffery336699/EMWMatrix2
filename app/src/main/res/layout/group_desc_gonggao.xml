@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_52"
+            android:layout_marginLeft="@dimen/qb_px_14"
+            android:layout_marginRight="@dimen/qb_px_14">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="频道公告"
+                android:textColor="#323232"
+                android:textSize="13sp" />
+
+
+
+            <ImageView
+                android:layout_width="@dimen/qb_px_12"
+                android:layout_height="@dimen/qb_px_12"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/qb_px_14"
+                android:src="@drawable/more"
+
+                />
+        </RelativeLayout>
+            <include layout="@layout/divide_line"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_52"
+            android:layout_marginLeft="@dimen/qb_px_14"
+            android:layout_marginRight="@dimen/qb_px_14">
+
+            <LinearLayout
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="今天需要把项目完成并提交"
+                    android:textColor="#323232"
+                    android:textSize="16sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="产品研发需要尽快完成项目和研发"
+                    android:textColor="#969696"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/qb_px_14"
+               android:text="2018-11-12 12.10"
+
+                />
+
+        </RelativeLayout>
+        <include
+            layout="@layout/divide_line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_12" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

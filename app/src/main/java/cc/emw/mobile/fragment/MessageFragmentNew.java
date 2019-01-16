@@ -2,6 +2,7 @@ package cc.emw.mobile.fragment;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -21,13 +22,14 @@ import butterknife.Unbinder;
 import cc.emw.mobile.R;
 import cc.emw.mobile.adapter.InventoryAdapter;
 import cc.emw.mobile.bean.CiclerItemBean;
+import cc.emw.mobile.chat.P2PChatActivity;
 import cc.emw.mobile.utils.ToastUtil;
 import cc.emw.mobile.view.SlideRecyclerView;
 
 /**
  * A simple {@link Fragment} subclass.　圈子协同fragment
  */
-public class MessageFragmentNew extends Fragment {
+public class MessageFragmentNew extends Fragment implements InventoryAdapter.OnitemClickLister {
 
     @BindView(R.id.tv_item_title)
     TextView tvItemTitle;
@@ -42,6 +44,7 @@ public class MessageFragmentNew extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_message, container, false);
         unbinder = ButterKnife.bind(this, view);
+        initModulData();
         initView();
         return view;
     }
@@ -49,7 +52,6 @@ public class MessageFragmentNew extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initModulData();
     }
 
     @Override
@@ -87,26 +89,9 @@ public class MessageFragmentNew extends Fragment {
             }
         });
         ryItem.setAdapter(adapter);
+        adapter.setOnMyclickListener(this);
     }
 
-    public static class MyOnclickListener implements View.OnClickListener{
-
-        private CiclerItemBean.ItemData itemData;
-        private SoftReference<Context> softReference;
-
-        public MyOnclickListener(CiclerItemBean.ItemData itemData,Context context) {
-            this.itemData = itemData;
-            softReference=new SoftReference<>(context);
-        }
-
-        @Override
-        public void onClick(View view) {
-            if (softReference!=null&&softReference.get()!=null){
-                Context context = softReference.get();
-                ToastUtil.showToast(context,""+itemData.getContent());
-            }
-        }
-    }
 
     public static MessageFragmentNew newInstance(Bundle bundle) {
         MessageFragmentNew fragment = new MessageFragmentNew();
@@ -118,5 +103,11 @@ public class MessageFragmentNew extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+    }
+
+    @Override
+    public void onViewClick(CiclerItemBean.ItemData itemData) {
+        ToastUtil.showToast(mContext,"点击"+itemData.getContent());
+        startActivity(new Intent(getActivity(),P2PChatActivity.class));
     }
 }

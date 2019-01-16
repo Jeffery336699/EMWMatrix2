@@ -1,35 +1,209 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<cc.emw.mobile.view.MyNestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-   >
+    android:id="@+id/parent"
+    >
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                >
-                <TextView
-                    android:id="@+id/title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="频道详情"
-                    />
-            </android.support.v7.widget.Toolbar>
+
+        <include layout="@layout/divide_line" />
+
+        <include layout="@layout/group_desc_head" />
+
+        <include layout="@layout/divide_line" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_52"
+            android:layout_marginLeft="@dimen/qb_px_14"
+            android:layout_marginRight="@dimen/qb_px_14">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="频道主题"
+                android:textColor="#323232"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/pro_case"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/qb_px_40"
+                android:text="产品方案"
+                android:textColor="#969696"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="@dimen/qb_px_12"
+                android:layout_height="@dimen/qb_px_12"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/qb_px_14"
+                android:src="@drawable/more"
+
+                />
+
+        </RelativeLayout>
 
         <include
-            layout="@layout/divide_line"/>
+            layout="@layout/divide_line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_12" />
 
+        <include layout="@layout/group_desc_gonggao" />
+
+        <include layout="@layout/group_desc_function" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_52"
+            android:layout_marginLeft="@dimen/qb_px_14"
+            android:layout_marginRight="@dimen/qb_px_14">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="频道成员"
+                android:textColor="#323232"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/group_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/qb_px_40"
+                android:text="12人"
+                android:textColor="#969696"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="@dimen/qb_px_12"
+                android:layout_height="@dimen/qb_px_12"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/qb_px_14"
+                android:src="@drawable/more"
+
+                />
+
+        </RelativeLayout>
+
+        <include layout="@layout/divide_line" />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycle_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </android.support.v7.widget.RecyclerView>
+        <include
+            layout="@layout/divide_line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_12" />
+        <RelativeLayout
+            android:id="@+id/rl_channel_management"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_52"
+            android:layout_marginLeft="@dimen/qb_px_14"
+            android:layout_marginRight="@dimen/qb_px_14">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="频道管理"
+                android:textColor="#323232"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:layout_width="@dimen/qb_px_12"
+                android:layout_height="@dimen/qb_px_12"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/qb_px_14"
+                android:src="@drawable/more"
+
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_52"
+            android:layout_marginLeft="@dimen/qb_px_14"
+            android:layout_marginRight="@dimen/qb_px_14">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="消息通知"
+                android:textColor="#323232"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:layout_width="@dimen/qb_px_12"
+                android:layout_height="@dimen/qb_px_12"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/qb_px_14"
+                android:src="@drawable/more"
+
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_52"
+            android:layout_marginLeft="@dimen/qb_px_14"
+            android:layout_marginRight="@dimen/qb_px_14">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="清空聊天记录"
+                android:textColor="#323232"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:layout_width="@dimen/qb_px_12"
+                android:layout_height="@dimen/qb_px_12"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/qb_px_14"
+                android:src="@drawable/more"
+
+                />
+
+        </RelativeLayout>
+        <include
+            layout="@layout/divide_line"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_12" />
+
+        <Button
+            android:layout_marginBottom="@dimen/qb_px_10"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_44"
+            android:text="进入会话"
+            android:background="@color/white"
+            android:textColor="#FF4C0D"
+            android:textSize="16sp"
+            />
 
     </LinearLayout>
 
 
-</android.support.constraint.ConstraintLayout>
+</cc.emw.mobile.view.MyNestedScrollView>
